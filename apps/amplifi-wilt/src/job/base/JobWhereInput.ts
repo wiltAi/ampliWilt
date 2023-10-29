@@ -73,6 +73,17 @@ class JobWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+  image?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
   ingress?: StringNullableFilter;
 
   @ApiProperty({

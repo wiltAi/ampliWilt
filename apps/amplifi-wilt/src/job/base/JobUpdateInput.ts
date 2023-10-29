@@ -60,6 +60,17 @@ class JobUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
+  image?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
   ingress?: string | null;
 
   @ApiProperty({

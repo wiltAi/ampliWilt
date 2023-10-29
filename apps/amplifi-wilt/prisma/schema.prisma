@@ -27,6 +27,7 @@ model Job {
   createdAt   DateTime     @default(now())
   description String?
   id          String       @id @default(cuid())
+  image       String?
   ingress     String?
   title       String?
   updatedAt   DateTime     @updatedAt

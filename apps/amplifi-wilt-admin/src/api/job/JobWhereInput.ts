@@ -7,6 +7,7 @@ export type JobWhereInput = {
   category?: JobCategoryWhereUniqueInput;
   description?: StringNullableFilter;
   id?: StringFilter;
+  image?: StringNullableFilter;
   ingress?: StringNullableFilter;
   title?: StringNullableFilter;
 };

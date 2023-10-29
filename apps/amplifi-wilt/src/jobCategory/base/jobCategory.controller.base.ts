@@ -228,6 +228,7 @@ export class JobCategoryControllerBase {
         createdAt: true,
         description: true,
         id: true,
+        image: true,
         ingress: true,
         title: true,
         updatedAt: true,

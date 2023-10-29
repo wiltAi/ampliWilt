@@ -6,6 +6,7 @@ export type JobOrderByInput = {
   createdAt?: SortOrder;
   description?: SortOrder;
   id?: SortOrder;
+  image?: SortOrder;
   ingress?: SortOrder;
   title?: SortOrder;
   updatedAt?: SortOrder;

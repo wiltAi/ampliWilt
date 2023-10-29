@@ -22,6 +22,7 @@ export const JobCreate = (props: CreateProps): React.ReactElement => {
           <SelectInput optionText={JobCategoryTitle} />
         </ReferenceInput>
         <TextInput label="description" multiline source="description" />
+        <TextInput label="image" source="image" />
         <TextInput label="ingress" source="ingress" />
         <TextInput label="title" source="title" />
       </SimpleForm>
