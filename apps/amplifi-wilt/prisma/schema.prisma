@@ -1,0 +1,56 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId String?
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Job {
+  address     String?
+  category    JobCategory? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  createdAt   DateTime     @default(now())
+  description String?
+  id          String       @id @default(cuid())
+  ingress     String?
+  title       String?
+  updatedAt   DateTime     @updatedAt
+}
+
+model Company {
+  address     String?
+  createdAt   DateTime @default(now())
+  description String?
+  email       String?
+  id          String   @id @default(cuid())
+  logo        String?
+  name        String?
+  orgNumber   String?
+  updatedAt   DateTime @updatedAt
+  users       User[]
+}
+
+model JobCategory {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  isLive      Boolean?
+  jobs        Job[]
+  name        String?
+  updatedAt   DateTime @updatedAt
+}
